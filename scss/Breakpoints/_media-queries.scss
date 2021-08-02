@@ -1,0 +1,74 @@
+@media (max-width: 750px) {
+  /*TITLE & LINKS*/
+  .header {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .navbar {
+    .navlink:link,
+    .navlin:visited {
+      font-size: 0.85rem;
+    }
+  }
+  /*APPOINTMENT BUTTON*/
+  .appointment-btn:link,
+  .appointment-btn:visited {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.2rem;
+  }
+
+  /*FOOTER*/
+  .contact-link {
+    font-size: 0.8rem;
+  }
+
+  /*CARD-TITLE*/
+  .main-card {
+    .title {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/*HEIGHT*/
+@media (max-height: 400px) {
+  .main-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    height: 60%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    row-gap: 0.2rem;
+
+    .title {
+      font-size: 1.4rem;
+    }
+  }
+  .appointment-btn {
+    font-size: 0.5rem;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+@media (max-height: 300px) {
+  .header {
+    display: none;
+  }
+
+  .main-card {
+    height: 90%;
+    row-gap: 0.5rem;
+  }
+}

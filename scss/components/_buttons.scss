@@ -1,0 +1,19 @@
+@use '../themes/colors' as c;
+
+@use '../themes/typography' as t;
+
+/*BOOK APPOINTMENT BUTTON*/
+.appointment-btn {
+  background-color: c.$third-color;
+  color: c.$second-color;
+  font-family: t.$main-font;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 0.1rem;
+  padding: 0.5rem 0.13rem;
+}
+
+.appointment-btn:visited,
+.appointment-btn:link {
+  text-decoration: none;
+}

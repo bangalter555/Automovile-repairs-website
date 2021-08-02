@@ -1,0 +1,245 @@
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+:root {
+  font-size: 16px;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.body {
+  position: relative;
+  display: block;
+  z-index: 0;
+  background-color: gray;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/main-image.jpg);
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  animation: loading 1s ease-in 800ms forwards;
+}
+
+/*BOOK APPOINTMENT BUTTON*/
+.appointment-btn {
+  background-color: #0ebedd;
+  color: white;
+  font-family: "Telex", sans-serif;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 0.1rem;
+  padding: 0.5rem 0.13rem;
+}
+
+.appointment-btn:visited,
+.appointment-btn:link {
+  text-decoration: none;
+}
+
+/*HEADER FEATURES*/
+.header {
+  width: 100%;
+  height: 10%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  background-color: #050933;
+  color: white;
+  -webkit-box-shadow: 5px 0 10px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 0 10px 5px rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 5%;
+}
+.header h1 {
+  font-family: "Telex", sans-serif;
+  font-size: 2rem;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 5%;
+}
+.navbar .navlink:visited,
+.navbar .navlink:link {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: white;
+  font-family: "Telex", sans-serif;
+}
+
+.footer {
+  width: 100%;
+  height: 10%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #050933;
+  -webkit-box-shadow: 5px 0 10px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 0 10px 5px rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.footer .contact-link:link,
+.footer .contact-link:visited {
+  text-decoration: none;
+  font-family: "Telex", sans-serif;
+}
+.footer h5 {
+  color: #0ebedd;
+}
+.footer p {
+  color: white;
+}
+
+.main {
+  width: 100%;
+  /*Declaro un ancho para poder posicionar el elemento card*/
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5%;
+}
+
+.main-card {
+  width: 50%;
+  height: auto;
+  /*Al usar altura auto se bloquean las medidas de posicionamiento como "justify-content","gap",etc y tampoco se puden usar unidades relativas como "%", porque no hay un punto fijo del que tomar referencia*/
+  padding: 5%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  display: flex;
+  flex-flow: column wrap;
+  row-gap: 2rem;
+}
+.main-card .title {
+  font-family: "Telex", sans-serif;
+  color: #0ebedd;
+  font-size: 2rem;
+}
+.main-card p {
+  font-family: "Telex", sans-serif;
+  color: white;
+}
+
+@media (max-width: 750px) {
+  /*TITLE & LINKS*/
+  .header {
+    justify-content: space-evenly;
+  }
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .navbar .navlink:link,
+.navbar .navlin:visited {
+    font-size: 0.85rem;
+  }
+
+  /*APPOINTMENT BUTTON*/
+  .appointment-btn:link,
+.appointment-btn:visited {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.2rem;
+  }
+
+  /*FOOTER*/
+  .contact-link {
+    font-size: 0.8rem;
+  }
+
+  /*CARD-TITLE*/
+  .main-card .title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-height: 400px) {
+  .main-card {
+    flex-flow: column nowrap;
+    height: 60%;
+    justify-content: center;
+    row-gap: 0.2rem;
+  }
+  .main-card .title {
+    font-size: 1.4rem;
+  }
+
+  .appointment-btn {
+    font-size: 0.5rem;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+@media (max-height: 300px) {
+  .header {
+    display: none;
+  }
+
+  .main-card {
+    height: 90%;
+    row-gap: 0.5rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
