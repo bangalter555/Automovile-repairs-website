@@ -60,4 +60,9 @@
     color: c.$second-color;
     font-family: t.$main-font;
   }
+
+  .navlink:hover {
+    border: 1.5px #fff solid;
+    padding: 0.15rem;
+  }
 }

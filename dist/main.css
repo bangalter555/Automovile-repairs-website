@@ -135,6 +135,10 @@
   color: white;
   font-family: "Telex", sans-serif;
 }
+.navbar .navlink:hover {
+  border: 1.5px #fff solid;
+  padding: 0.15rem;
+}
 
 .footer {
   width: 100%;
