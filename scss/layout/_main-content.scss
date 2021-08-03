@@ -27,6 +27,7 @@
   width: 50%;
   height: auto; /*Al usar altura auto se bloquean las medidas de posicionamiento como "justify-content","gap",etc y tampoco se puden usar unidades relativas como "%", porque no hay un punto fijo del que tomar referencia*/
   padding: 5%;
+  opacity: 0;
   background-color: c.$fourth-color;
   border-radius: 3px;
   display: -webkit-box;
@@ -37,6 +38,8 @@
   -ms-flex-flow: column wrap;
   flex-flow: column wrap;
   row-gap: 2rem;
+  -webkit-animation: card-show-up 1s ease-in 1.2s forwards;
+  animation: card-show-up 1s ease-in 1.2s forwards;
 
   .title {
     font-family: t.$main-font;

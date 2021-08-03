@@ -1,11 +1,3 @@
-@keyframes loading {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 :root {
   font-size: 16px;
 }
@@ -26,24 +18,6 @@
   background-color: gray;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../images/main-image.jpg);
-  background-size: cover;
-  /*background-repeat: no-repeat;*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  animation: loading 1s ease-in 800ms forwards;
-}
-
 /*BOOK APPOINTMENT BUTTON*/
 .appointment-btn {
   background-color: #0ebedd;
@@ -60,11 +34,59 @@
   text-decoration: none;
 }
 
+/*HEADER & FOOTER SLIDE*/
+@-webkit-keyframes bar-sliding-down {
+  100% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+@keyframes bar-sliding-down {
+  100% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+@-webkit-keyframes bar-sliding-up {
+  100% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+@keyframes bar-sliding-up {
+  100% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+/*MAIN CARD*/
+@-webkit-keyframes card-show-up {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes card-show-up {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 /*HEADER FEATURES*/
 .header {
   width: 100%;
   height: 10%;
-  top: 0;
+  top: -10%;
   left: 0;
   position: fixed;
   z-index: 2;
@@ -86,6 +108,7 @@
   -ms-flex-align: center;
   align-items: center;
   padding: 0 5%;
+  animation: bar-sliding-down 1s ease-in 1.2s forwards;
 }
 .header h1 {
   font-family: "Telex", sans-serif;
@@ -117,7 +140,7 @@
   width: 100%;
   height: 10%;
   position: fixed;
-  bottom: 0;
+  bottom: -10%;
   left: 0;
   z-index: 2;
   background-color: #050933;
@@ -136,6 +159,8 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-animation: bar-sliding-up 1s ease-in 1.2s forwards;
+  animation: bar-sliding-up 1s ease-in 1.2s forwards;
 }
 .footer .contact-link:link,
 .footer .contact-link:visited {
@@ -153,9 +178,18 @@
   width: 100%;
   /*Declaro un ancho para poder posicionar el elemento card*/
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 5%;
 }
@@ -165,11 +199,19 @@
   height: auto;
   /*Al usar altura auto se bloquean las medidas de posicionamiento como "justify-content","gap",etc y tampoco se puden usar unidades relativas como "%", porque no hay un punto fijo del que tomar referencia*/
   padding: 5%;
+  opacity: 0;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
   row-gap: 2rem;
+  -webkit-animation: card-show-up 1s ease-in 1.2s forwards;
+  animation: card-show-up 1s ease-in 1.2s forwards;
 }
 .main-card .title {
   font-family: "Telex", sans-serif;
@@ -184,6 +226,8 @@
 @media (max-width: 750px) {
   /*TITLE & LINKS*/
   .header {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
   }
   .header h1 {
@@ -212,10 +256,16 @@
     font-size: 1.4rem;
   }
 }
+/*HEIGHT*/
 @media (max-height: 400px) {
   .main-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
     flex-flow: column nowrap;
     height: 60%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     row-gap: 0.2rem;
   }
@@ -240,6 +290,22 @@
     height: 90%;
     row-gap: 0.5rem;
   }
+}
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/main-image.jpg);
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,18 @@
+@forward '../utils/animations';
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/main-image.jpg);
+  background-size: cover;
+  /*background-repeat: no-repeat;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
