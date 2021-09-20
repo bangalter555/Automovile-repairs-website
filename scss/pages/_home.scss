@@ -1,13 +1,12 @@
-@forward '../utils/animations';
+@forward "../utils/animations";
 
 .container {
   position: relative;
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/main-image.jpg);
+  background-image: url(../images/main-image.jpg); //No puedo utilizar el atajo 'background'
   background-size: cover;
-  /*background-repeat: no-repeat;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

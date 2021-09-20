@@ -1,10 +1,10 @@
-@forward '../components/buttons';
+@forward "../components/buttons";
 
-@forward '../utils/animations';
+@forward "../utils/animations";
 
-@use '../themes/colors' as c;
+@use "../themes/colors" as c;
 
-@use '../themes/typography' as t;
+@use "../themes/typography" as t;
 
 /*HEADER FEATURES*/
 .header {

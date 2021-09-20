@@ -12,7 +12,6 @@
 }
 
 .body {
-  position: relative;
   display: block;
   z-index: 0;
   background-color: gray;
@@ -302,7 +301,6 @@
   height: 100vh;
   background-image: url(../images/main-image.jpg);
   background-size: cover;
-  /*background-repeat: no-repeat;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
